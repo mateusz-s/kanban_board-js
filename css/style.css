@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+.clearfix:before, .column-container:before, .clearfix:after, .column-container:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.column {
+  float: left;
+  width: 25%;
+  background-color: red; }
+  .column-title {
+    background-color: cadetblue; }
+  .column-card-list {
+    background-color: greenyellow; }
+
+.btn-delete {
+  background-color: darkorange; }
+
+.add-card {
+  background-color: yellowgreen; }
+
+.card-description {
+  background-color: hotpink; }
+
+.board {
+  background-color: purple; }
+
+.column-container {
+  background-color: goldenrod; }
+
+.create-column {
+  background-color: dimgrey; }
+
+/*# sourceMappingURL=style.css.map */
