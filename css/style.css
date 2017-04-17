@@ -1,0 +1,252 @@
+/* === GLOBAL STYLES === */
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1.8rem;
+  background-image: url("../img/shattered.png");
+  background-attachment: fixed; }
+
+i.fa {
+  color: inherit;
+  font-size: 2rem; }
+
+.clearfix:before, .column-container:before, .clearfix:after, .column-container:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+button {
+  padding: 0;
+  border: 0;
+  color: #FFFFFF;
+  background-color: transparent;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
+  cursor: pointer; }
+
+.btn-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px; }
+
+.add-card {
+  position: absolute;
+  top: 0;
+  right: 3.6rem;
+  padding: 10px; }
+
+/* === KANBAN BOARD STYLES === */
+.board h1 {
+  padding: 20px;
+  margin: 0;
+  color: #FFFFFF;
+  background-color: #FFA219; }
+.board .create-column {
+  width: 100%;
+  font-size: 2rem;
+  line-height: 5rem;
+  background-color: #3498DB;
+  -webkit-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none; }
+  .board .create-column i.fa {
+    margin-right: 5px; }
+
+.column {
+  float: left;
+  width: 100%;
+  min-height: 200px;
+  padding: 0 15px;
+  margin-bottom: 30px;
+  animation-name: fadeIn;
+  animation-duration: 1s; }
+  .column-container {
+    padding: 50px 0; }
+  .column-item {
+    position: relative;
+    padding-bottom: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #3498DB;
+    border-bottom-width: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7); }
+  .column-title {
+    min-height: 4rem;
+    padding-left: 15px;
+    padding-right: 72px;
+    margin: -2px -2px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 2.4rem;
+    line-height: 4rem;
+    color: #FFFFFF;
+    background-color: #3498DB; }
+  .column-card-list {
+    min-height: 12.4rem;
+    padding: 0 15px;
+    margin: 0;
+    list-style: none; }
+
+.card {
+  position: relative;
+  min-height: 5.2rem;
+  padding: 10px;
+  padding-right: 36px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #DDDDDD;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  animation-name: fadeIn;
+  animation-duration: 1s; }
+  .card:hover {
+    background-color: #FFA219; }
+  .card:last-child {
+    margin: 0; }
+  .card .btn-delete {
+    padding: 16px 10px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; }
+  .card-description {
+    margin: 0;
+    line-height: 3.2rem; }
+  .card-placeholder {
+    min-height: 5.2rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 162, 25, 0.5);
+    animation-name: fadeIn;
+    animation-duration: .5s; }
+
+/* === ANIMATION KEYFRAMES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+/* === MEDIA QUERIES GLOBAL STYLES === */
+@media (min-width: 768px) {
+  .col-sm-1 {
+    width: 8.33333%; }
+
+  .col-sm-2 {
+    width: 16.66667%; }
+
+  .col-sm-3 {
+    width: 25%; }
+
+  .col-sm-4 {
+    width: 33.33333%; }
+
+  .col-sm-5 {
+    width: 41.66667%; }
+
+  .col-sm-6 {
+    width: 50%; }
+
+  .col-sm-7 {
+    width: 58.33333%; }
+
+  .col-sm-8 {
+    width: 66.66667%; }
+
+  .col-sm-9 {
+    width: 75%; }
+
+  .col-sm-10 {
+    width: 83.33333%; }
+
+  .col-sm-11 {
+    width: 91.66667%; }
+
+  .col-sm-12 {
+    width: 100%; } }
+@media (min-width: 992px) {
+  .col-md-1 {
+    width: 8.33333%; }
+
+  .col-md-2 {
+    width: 16.66667%; }
+
+  .col-md-3 {
+    width: 25%; }
+
+  .col-md-4 {
+    width: 33.33333%; }
+
+  .col-md-5 {
+    width: 41.66667%; }
+
+  .col-md-6 {
+    width: 50%; }
+
+  .col-md-7 {
+    width: 58.33333%; }
+
+  .col-md-8 {
+    width: 66.66667%; }
+
+  .col-md-9 {
+    width: 75%; }
+
+  .col-md-10 {
+    width: 83.33333%; }
+
+  .col-md-11 {
+    width: 91.66667%; }
+
+  .col-md-12 {
+    width: 100%; } }
+@media (min-width: 1200px) {
+  .col-lg-1 {
+    width: 8.33333%; }
+
+  .col-lg-2 {
+    width: 16.66667%; }
+
+  .col-lg-3 {
+    width: 25%; }
+
+  .col-lg-4 {
+    width: 33.33333%; }
+
+  .col-lg-5 {
+    width: 41.66667%; }
+
+  .col-lg-6 {
+    width: 50%; }
+
+  .col-lg-7 {
+    width: 58.33333%; }
+
+  .col-lg-8 {
+    width: 66.66667%; }
+
+  .col-lg-9 {
+    width: 75%; }
+
+  .col-lg-10 {
+    width: 83.33333%; }
+
+  .col-lg-11 {
+    width: 91.66667%; }
+
+  .col-lg-12 {
+    width: 100%; } }
+
+/*# sourceMappingURL=style.css.map */
