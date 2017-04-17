@@ -1,0 +1,237 @@
+//Grid system variables
+$column-max-width: 100%;
+$grid-columns-count: 12;
+$column-min-width: $column-max-width / $grid-columns-count;  
+
+//Fonts
+$base-font-family: 'Lato', sans-serif;
+
+//Colors
+$base-text-color: #FFFFFF;
+$base-color: #3498DB;
+$second-color: #FFA219;
+$column-bg-color: rgba(255, 255, 255, .7);
+$card-bg-color: #DDDDDD;
+$card-placeholder-bg-color: rgba(255, 162, 25, .5);
+
+//Mixins
+@mixin column-size($size) {
+    @for $i from 1 through $grid-columns-count {
+        .col-#{$size}-#{$i} {
+            width: $column-min-width * $i;
+        }
+    }
+}
+
+@mixin base-transition($prop, $time) {
+    -webkit-transition: $prop $time;
+    -o-transition: $prop $time;
+    transition: $prop $time;
+}
+
+@mixin base-transform($fun) {
+    -webkit-transform: $fun;
+    -ms-transform: $fun;
+    -o-transform: $fun;
+    transform: $fun;
+}
+
+@mixin transform-translate-Y($y) {
+    -webkit-transform: translateY($y);
+    -ms-transform: translateY($y);
+    -o-transform: translateY($y);
+    transform: translateY($y);
+}
+
+/* === GLOBAL STYLES === */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font: {
+        family: $base-font-family;
+        size: 1.8rem;
+    }
+    background: {
+        image: url('../img/shattered.png');
+        attachment: fixed;
+    }
+}
+
+i.fa {
+    color: inherit;
+    font-size: 2rem;
+}
+
+.clearfix:before, .clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    color: $base-text-color;
+    background-color: transparent;
+    @include transform-translate-Y(-2px);
+    cursor: pointer;
+}
+
+.btn-delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.add-card {
+    position: absolute;
+    top: 0;
+    right: 3.6rem;
+    padding: 10px;
+}
+
+/* === KANBAN BOARD STYLES === */
+.board {
+    h1 {
+        padding: 20px;
+        margin: 0;
+        color: $base-text-color;
+        background-color: $second-color;
+    }
+    .create-column {
+        width: 100%;
+        font-size: 2rem;
+        line-height: 5rem;
+        background-color: $base-color;
+        @include base-transform(none);
+        & i.fa {
+            margin-right: 5px;
+        }
+    }
+}
+
+.column {
+    float: left;
+    width: 100%;
+    min-height: 200px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    animation: {
+        name: fadeIn;
+        duration: 1s;
+    }
+    &-container {
+//        width: 100%;
+//        max-width: 1200px;
+        padding: 50px 0;
+//        margin: 0 auto;
+        @extend .clearfix;
+    }
+    &-item {
+        position: relative;
+        padding-bottom: 20px;
+        border: {
+            width: 2px;
+            style: solid;
+            color: $base-color;
+            bottom-width: 5px;
+            top: {
+                left-radius: 5px;
+                right-radius: 5px;
+            }
+        }
+        background-color: $column-bg-color;
+    }
+    &-title {
+        min-height: 4rem;
+        padding: {
+            left: 15px;
+            right: 72px;
+        }
+        margin: -2px -2px 20px;
+        border-top: {
+            left-radius: 5px;
+            right-radius: 5px;
+        }
+        font-size: 2.4rem;
+        line-height: 4rem;
+        color: $base-text-color;
+        background-color: $base-color;
+    }
+    &-card-list {
+        min-height: 12.4rem;
+        padding: 0 15px;
+        margin: 0;
+        list-style: none;
+    }
+}
+
+.card {
+    position: relative;
+    min-height: 5.2rem;
+    padding: 10px;
+    padding-right: 36px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: $card-bg-color;
+    @include base-transition(background-color, .5s);
+    animation: {
+        name: fadeIn;
+        duration: 1s;
+    }
+    &:hover {
+        background-color: $second-color;
+    }
+    &:last-child {
+        margin: 0;
+    }
+    & .btn-delete {
+        padding: 16px 10px;
+        @include base-transform(none);
+    }
+    &-description {
+        margin: 0;
+        line-height: 3.2rem;
+    }
+    &-placeholder {
+        min-height: 5.2rem;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: $card-placeholder-bg-color;
+        animation: {
+            name: fadeIn;
+            duration: .5s;
+        }
+    }
+}
+
+/* === ANIMATION KEYFRAMES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === MEDIA QUERIES GLOBAL STYLES === */
+@media (min-width: 768px) {
+    @include column-size(sm);
+}
+
+@media (min-width: 992px) {
+    @include column-size(md);
+}
+
+@media (min-width: 1200px) {
+    @include column-size(lg);
+}
