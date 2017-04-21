@@ -78,6 +78,7 @@ i.fa {
 button {
     padding: 0;
     border: 0;
+    outline: none;
     color: $base-text-color;
     background-color: transparent;
     @include transform-translate-Y(-2px);
@@ -163,6 +164,7 @@ button {
         }
         font-size: 2.4rem;
         line-height: 4rem;
+        letter-spacing: .2rem;
         color: $base-text-color;
         background-color: $base-color;
     }
