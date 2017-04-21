@@ -36,7 +36,7 @@ $(document).ready(function () {
                 .append($columnAddCard)
                 .append($columnCardList);
             
-            $column.append($columnItem)
+            $column.append($columnItem);
             
             return $column;
         }
@@ -49,7 +49,7 @@ $(document).ready(function () {
         removeColumn: function () {
             this.$element.remove();
         }
-    }
+    };
     
     function Card(description) {
         var self = this;
