@@ -83,6 +83,9 @@ button {
   background-color: #FFA219; }
   .board-footer p {
     margin: 0; }
+    @media (max-width: 320px) {
+      .board-footer p {
+        font-size: 1.6rem; } }
   .board-footer a {
     color: #FFFFFF;
     text-decoration: none; }

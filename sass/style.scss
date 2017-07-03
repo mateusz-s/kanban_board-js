@@ -139,6 +139,9 @@ button {
         background-color: $second-color;
         p {
             margin: 0;
+            @media (max-width: 320px) {
+                font-size: 1.6rem;
+            }
         }
         a {
             color: $base-text-color;
