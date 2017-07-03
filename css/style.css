@@ -58,6 +58,9 @@ button {
     margin: 0;
     color: #FFFFFF;
     background-color: #FFA219; }
+    @media (max-width: 576px) {
+      .board-header h1 {
+        text-align: center; } }
   .board-header .create-column {
     width: 100%;
     font-size: 2rem;
