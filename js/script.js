@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function () {   
     function randomString() {
         var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
             str = '';
