@@ -18,20 +18,45 @@ function Column(id, name) {
         });
 
         $columnAddCard.click(function (event) {
-            var cardName = prompt('Wpisz nazwę karty:');
-            event.preventDefault();
-            $.ajax({
-                url: baseUrl + '/card',
-                method: 'POST',
-                data: {
-                    name: cardName,
-                    bootcamp_kanban_column_id: self.id
-                },
-                success: function (response) {
-                    var card = new Card(response.id, cardName);
-                    self.createCard(card);
-                }
-            });
+            swal({  // sweetAlert start
+                title: "Wpisz nazwę karty:", 
+                text: "", 
+                type: "input",
+                showCancelButton: true,
+                cancelButtonText: "Anuluj",
+                closeOnConfirm: true,
+                inputPlaceholder: "np. Nauczyć się podstaw CSS"
+            }, 
+            function(cardName) {
+                event.preventDefault();
+                $.ajax({
+                    url: baseUrl + '/card',
+                    method: 'POST',
+                    data: {
+                        name: cardName,
+                        bootcamp_kanban_column_id: self.id
+                    },
+                    success: function (response) {
+                        var card = new Card(response.id, cardName);
+                        self.createCard(card);
+                    }
+                });
+            });     // sweetAlert end
+            
+//            var cardName = prompt('Wpisz nazwę karty:');
+//            event.preventDefault();
+//            $.ajax({
+//                url: baseUrl + '/card',
+//                method: 'POST',
+//                data: {
+//                    name: cardName,
+//                    bootcamp_kanban_column_id: self.id
+//                },
+//                success: function (response) {
+//                    var card = new Card(response.id, cardName);
+//                    self.createCard(card);
+//                }
+//            });
         });
 
         $columnItem.append($columnTitle)
