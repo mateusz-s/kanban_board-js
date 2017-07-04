@@ -53,8 +53,7 @@ html {
 }
 
 body {
-    margin: 0;
-    margin-top: 131px;
+    margin: 100px 0 30px;
     font: {
         family: $base-font-family;
         size: 1.8rem;
@@ -65,17 +64,6 @@ body {
     }
 }
 
-i.fa {
-    color: inherit;
-    font-size: 2rem;
-}
-
-.clearfix:before, .clearfix:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
 button {
     padding: 0;
     border: 0;
@@ -83,6 +71,21 @@ button {
     background-color: transparent;
     @include transform-translate-Y(-2px);
     cursor: pointer;
+}
+
+/* === ADDITIONAL STYLES === */
+i.fa {
+    color: inherit;
+    font-size: 2rem;
+}
+
+.clearfix {
+    &::before, 
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
 
 .btn-delete {
@@ -99,6 +102,21 @@ button {
     padding: 10px;
 }
 
+/* === SWEET ALERT STYLES === */
+.sweet-alert {
+    border: 5px solid $base-color;
+    input:focus {
+        border-color: $base-color;
+        box-shadow: none;
+    }
+    .cancel {
+        background-color: $second-color !important;
+    }
+    .confirm {
+        background-color: $base-color !important;
+    }
+}
+
 /* === KANBAN BOARD STYLES === */
 .board {
     &-header {
@@ -109,7 +127,7 @@ button {
         box-shadow: 0 1px 15px 0 $second-color;
         z-index: 100;
         h1 {
-            padding: 20px;
+            padding: 10px 20px;
             margin: 0;
             color: $base-text-color;
             background-color: $second-color;
@@ -119,8 +137,8 @@ button {
         }
         .create-column {
             width: 100%;
+            padding: 8px 0;
             font-size: 2rem;
-            line-height: 5rem;
             background-color: $base-color;
             @include base-transform(none);
             & i.fa {
@@ -133,7 +151,7 @@ button {
         bottom: 0;
         left: 0;
         right: 0;
-        padding: 10px 0;
+        padding: 5px 0;
         text-align: center;
         color: $base-text-color;
         background-color: $second-color;
@@ -164,11 +182,12 @@ button {
         duration: 1s;
     }
     &-container {
+        @extend .clearfix;
 //        width: 100%;
 //        max-width: 1200px;
-        padding: 50px 0 20px;
+        padding-top: 30px;
 //        margin: 0 auto;
-        @extend .clearfix;
+
     }
     &-item {
         position: relative;
