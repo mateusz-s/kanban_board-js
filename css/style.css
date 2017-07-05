@@ -112,7 +112,9 @@ i.fa {
   animation-name: fadeIn;
   animation-duration: 1s; }
   .column-container {
-    padding-top: 30px; }
+    width: 100%;
+    padding-top: 30px;
+    margin: 0 auto; }
   .column-item {
     position: relative;
     padding-bottom: 20px;
