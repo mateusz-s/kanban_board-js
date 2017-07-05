@@ -131,7 +131,7 @@ i.fa {
             margin: 0;
             color: $base-text-color;
             background-color: $second-color;
-            @media (max-width: 576px) {
+            @media screen and (max-width: 576px) {
                 text-align: center;
             }
         }
@@ -274,15 +274,15 @@ i.fa {
   to {opacity: 1;}
 }
 
-/* === MEDIA QUERIES GLOBAL STYLES === */
-@media (min-width: 768px) {
+/* === MEDIA QUERIES === */
+@media screen and (min-width: 768px) {
     @include column-size(sm);
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
     @include column-size(md);
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     @include column-size(lg);
 }
